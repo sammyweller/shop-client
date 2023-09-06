@@ -2,7 +2,7 @@ export const GameView = ({ game, onBackClick }) => {
     return (
       <div>
         <div>
-          <img src={game.image} />
+          <img src={game.image} alt={game.title}/>
         </div>
         <div>
           <span>Title: </span>

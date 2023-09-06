@@ -9,7 +9,7 @@ export const GameCard = ( { game, onGameClick } ) => {
           }}
         >
           {game.title}
-          {game.image}
+          <img src={game.image} alt={game.title} />
         </div>
       );
   };

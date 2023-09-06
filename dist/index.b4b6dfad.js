@@ -27246,7 +27246,14 @@ const GameCard = ({ game, onGameClick })=>{
         },
         children: [
             game.title,
-            game.image
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: game.image,
+                alt: game.title
+            }, void 0, false, {
+                fileName: "src/components/game-card/game-card.jsx",
+                lineNumber: 12,
+                columnNumber: 11
+            }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/game-card/game-card.jsx",
@@ -28201,7 +28208,8 @@ const GameView = ({ game, onBackClick })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: game.image
+                    src: game.image,
+                    alt: game.title
                 }, void 0, false, {
                     fileName: "src/components/game-view/game-view.jsx",
                     lineNumber: 5,
