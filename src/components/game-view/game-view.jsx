@@ -5,12 +5,14 @@ export const GameView = ({ game, onBackClick }) => {
           <img src={game.image} alt={game.title}/>
         </div>
         <div>
-          <span>Title: </span>
           <span>{game.title}</span>
         </div>
         <div>
-          <span>Author: </span>
-          <span>{game.author}</span>
+          <span>{game.description}</span>
+        </div>
+        <div>
+          <span>Price: </span>
+          <span>{game.price}</span>
         </div>
         <button onClick={onBackClick}>Back</button>
       </div>
