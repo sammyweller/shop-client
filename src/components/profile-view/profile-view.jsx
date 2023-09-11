@@ -25,14 +25,14 @@ export const ProfileView = ({ user, games, token, onLogout }) => {
   const handleUpdateUser = (event) => {
     event.preventDefault();
 
+
     // Create an updatedUser object with new values
     const updatedUser = {
-      username,
-      password,
-      email
+      Username: username,
+      Password: password,
+      Email: email
     };
 
-    // Make an API request to update the user's information
     fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.Username}`, {
       method: "PUT",
       headers: {
@@ -44,6 +44,9 @@ export const ProfileView = ({ user, games, token, onLogout }) => {
       .then((response) => response.json())
       .then((data) => {
         setSuccessMessage("User updated successfully");
+        console.log("Updated User Data:", data);
+
+
       })
       .catch((error) => {
         console.log("Error updating user data:", error);
@@ -51,8 +54,8 @@ export const ProfileView = ({ user, games, token, onLogout }) => {
   };
 
 
+ //Delete user works
   const handleDeleteUser = () => {
-    // Make an API request to delete the user's account
     fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.Username}`, {
       method: "DELETE",
       headers: {
