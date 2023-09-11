@@ -3,6 +3,9 @@ import { GameCard } from "../game-card/game-card";
 import { GameView } from "../game-view/game-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
+import Row from "react-bootstrap/Row";
+import Col from 'react-bootstrap/Col';
+
 
 export const MainView = () => {
   const [games, setGames] = useState([]);
@@ -37,7 +40,7 @@ export const MainView = () => {
   };
 
   return (
-    <div>
+    <Row className="justify-content-md-center">
       {!user ? (
         <>
           <LoginView
@@ -52,20 +55,23 @@ export const MainView = () => {
       ) : (
         <button onClick={handleLogout}>Logout</button>
       )}
-      
+
       {selectedGame ? (
+        <Col md={8}>
         <GameView game={selectedGame} onBackClick={() => setSelectedGame(null)} />
+        </Col>
       ) : (
         games.map((game) => (
+          <Col key={game.id} className="mb-5" md={4}>
           <GameCard
-            key={game.id}
             game={game}
             onGameClick={() => {
               setSelectedGame(game);
             }}
           />
+          </Col>
         ))
       )}
-    </div>
+    </Row>
   );
 };

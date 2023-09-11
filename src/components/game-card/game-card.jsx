@@ -1,19 +1,20 @@
 import PropTypes from "prop-types";
+import { Button, Card } from "react-bootstrap";
 
 
 export const GameCard = ( { game, onGameClick } ) => {
     return (
-        <div
-          onClick={() => {
-            onGameClick(game);
-          }}
-        >
-          {game.title}
-          <img src={game.image} alt={game.title} />
-        </div>
-      );
-  };
-
+<Card className="h-100">
+      <Card.Img variant="top" src={game.image} />
+      <Card.Body>
+        <Card.Title>{game.title}</Card.Title>
+        <Button onClick={() => onGameClick(game)} variant="link">
+          Open
+        </Button>
+      </Card.Body>
+    </Card>
+  );
+};
 
   GameCard.propTypes = {
     game: PropTypes.shape({
