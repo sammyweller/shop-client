@@ -27393,71 +27393,74 @@ const GameCard = ({ game, user, token, setUser })=>{
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-        className: "h-100",
+        className: "h-100 game-card hover-effect ",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
-                variant: "top",
-                src: game.image
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: `/games/${encodeURIComponent(game.id)}`,
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
+                    className: "card-image",
+                    variant: "top",
+                    src: game.image
+                }, void 0, false, {
+                    fileName: "src/components/game-card/game-card.jsx",
+                    lineNumber: 72,
+                    columnNumber: 9
+                }, undefined)
             }, void 0, false, {
                 fileName: "src/components/game-card/game-card.jsx",
-                lineNumber: 70,
+                lineNumber: 71,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
+                className: "card-body hover-effect",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
-                        children: game.title
-                    }, void 0, false, {
-                        fileName: "src/components/game-card/game-card.jsx",
-                        lineNumber: 72,
-                        columnNumber: 9
-                    }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: `/games/${encodeURIComponent(game.id)}`,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                            variant: "link",
-                            children: "Open"
-                        }, void 0, false, {
-                            fileName: "src/components/game-card/game-card.jsx",
-                            lineNumber: 74,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/components/game-card/game-card.jsx",
-                        lineNumber: 73,
-                        columnNumber: 9
-                    }, undefined),
-                    user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        onClick: inCart ? handleRemoveFromCart : handleAddToCart,
-                        children: inCart ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            children: "remove"
+                        className: "no-text-decoration text-center",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
+                            className: "card-title",
+                            children: game.title
                         }, void 0, false, {
                             fileName: "src/components/game-card/game-card.jsx",
                             lineNumber: 78,
-                            columnNumber: 23
-                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            children: "add"
-                        }, void 0, false, {
-                            fileName: "src/components/game-card/game-card.jsx",
-                            lineNumber: 78,
-                            columnNumber: 45
+                            columnNumber: 9
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/game-card/game-card.jsx",
                         lineNumber: 77,
+                        columnNumber: 7
+                    }, undefined),
+                    user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        onClick: inCart ? handleRemoveFromCart : handleAddToCart,
+                        children: inCart ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: "Remove from cart"
+                        }, void 0, false, {
+                            fileName: "src/components/game-card/game-card.jsx",
+                            lineNumber: 82,
+                            columnNumber: 23
+                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: "Add to cart"
+                        }, void 0, false, {
+                            fileName: "src/components/game-card/game-card.jsx",
+                            lineNumber: 82,
+                            columnNumber: 55
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/game-card/game-card.jsx",
+                        lineNumber: 81,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/game-card/game-card.jsx",
-                lineNumber: 71,
+                lineNumber: 76,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/game-card/game-card.jsx",
         lineNumber: 69,
-        columnNumber: 1
+        columnNumber: 7
     }, undefined);
 };
 _c = GameCard;
@@ -47435,8 +47438,8 @@ const ProfileView = ({ user, games, token, onLogout })=>{
     const cart = games.filter((g)=>user.Cart.includes(g.id));
     (0, _react.useEffect)(()=>{
         if (user) {
-            setUsername(user.username);
-            setEmail(user.email);
+            setUsername(user.Username);
+            setEmail(user.Email);
         }
     }, [
         user
@@ -47450,7 +47453,7 @@ const ProfileView = ({ user, games, token, onLogout })=>{
             email
         };
         // Make an API request to update the user's information
-        fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.username}`, {
+        fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.Username}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -47465,7 +47468,7 @@ const ProfileView = ({ user, games, token, onLogout })=>{
     };
     const handleDeleteUser = ()=>{
         // Make an API request to delete the user's account
-        fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.username}`, {
+        fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.Username}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`

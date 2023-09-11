@@ -66,16 +66,20 @@ export const GameCard = ( { game, user, token, setUser } ) => {
 
 
     return (
-<Card className="h-100">
-      <Card.Img variant="top" src={game.image} />
-      <Card.Body>
-        <Card.Title>{game.title}</Card.Title>
-        <Link to={`/games/${encodeURIComponent(game.id)}`}>
-          <Button variant="link">Open</Button>
+      <Card className="h-100 game-card hover-effect "
+  >
+      <Link to={`/games/${encodeURIComponent(game.id)}`}>
+        <Card.Img className="card-image"
+          variant="top"
+          src={game.image} />
+      </Link>
+      <Card.Body className="card-body hover-effect">
+      <Link to={`/games/${encodeURIComponent(game.id)}`} className="no-text-decoration text-center">
+        <Card.Title className="card-title" >{game.title}</Card.Title>
         </Link>
         {user && (
           <div onClick={inCart ? handleRemoveFromCart : handleAddToCart}>
-            {inCart ? <span>remove</span> : <span>add</span>}
+            {inCart ? <span>Remove from cart</span> : <span>Add to cart</span>}
           </div>
         )}
       </Card.Body>

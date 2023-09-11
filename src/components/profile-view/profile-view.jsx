@@ -16,8 +16,8 @@ export const ProfileView = ({ user, games, token, onLogout }) => {
 
   useEffect(() => {
     if (user) {
-      setUsername(user.username);
-      setEmail(user.email);
+      setUsername(user.Username);
+      setEmail(user.Email);
     }
   }, [user]);
 
@@ -33,7 +33,7 @@ export const ProfileView = ({ user, games, token, onLogout }) => {
     };
 
     // Make an API request to update the user's information
-    fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.username}`, {
+    fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.Username}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export const ProfileView = ({ user, games, token, onLogout }) => {
 
   const handleDeleteUser = () => {
     // Make an API request to delete the user's account
-    fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.username}`, {
+    fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.Username}`, {
       method: "DELETE",
       headers: {
           Authorization: `Bearer ${token}`
