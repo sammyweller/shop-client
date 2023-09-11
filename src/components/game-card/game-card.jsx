@@ -3,14 +3,13 @@ import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
-
-
 export const GameCard = ( { game, user, token, setUser } ) => {
 
   const currentUser = user || {};
 
   const inCart = currentUser.Cart && currentUser.Cart.includes(game.id);
+
+
 
   // Add to cart:
   const handleAddToCart = () => {
@@ -35,7 +34,6 @@ export const GameCard = ( { game, user, token, setUser } ) => {
         });
     }
   };
-
 
 
   // Remove from cart
@@ -64,7 +62,6 @@ export const GameCard = ( { game, user, token, setUser } ) => {
 
 
 
-
     return (
       <Card className="h-100 game-card hover-effect "
   >
@@ -77,6 +74,7 @@ export const GameCard = ( { game, user, token, setUser } ) => {
       <Link to={`/games/${encodeURIComponent(game.id)}`} className="no-text-decoration text-center">
         <Card.Title className="card-title" >{game.title}</Card.Title>
         </Link>
+        <Card.Text className="card-price">{game.price}</Card.Text>
         {user && (
           <div onClick={inCart ? handleRemoveFromCart : handleAddToCart}>
             {inCart ? <span>Remove from cart</span> : <span>Add to cart</span>}

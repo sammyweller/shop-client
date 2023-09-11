@@ -5,6 +5,7 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { ProfileView } from "../profile-view/profile-view";
+import { CartView } from "../cart-view/cart-view"
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -53,7 +54,7 @@ export const MainView = () => {
             element={
               <>
                 {games.map((game) => (
-                  <Col
+                  <Col md={4}
                     className="mb-5 "
                     key={game.id}
                   >
@@ -137,6 +138,7 @@ export const MainView = () => {
               </>
             }
           />
+          
 
 
         </Routes>

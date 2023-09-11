@@ -27180,6 +27180,7 @@ var _loginView = require("../login-view/login-view");
 var _signupView = require("../signup-view/signup-view");
 var _navigationBar = require("../navigation-bar/navigation-bar");
 var _profileView = require("../profile-view/profile-view");
+var _cartView = require("../cart-view/cart-view");
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
@@ -27218,7 +27219,7 @@ const MainView = ()=>{
                 onLoggedOut: onLogout
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 47,
+                lineNumber: 48,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -27229,6 +27230,7 @@ const MainView = ()=>{
                             path: "/",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: games.map((game)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                        md: 4,
                                         className: "mb-5 ",
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gameCard.GameCard), {
                                             user: user,
@@ -27240,7 +27242,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 51,
+                            lineNumber: 52,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27253,7 +27255,7 @@ const MainView = ()=>{
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 72,
+                            lineNumber: 73,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27268,7 +27270,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 84,
+                            lineNumber: 85,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27288,7 +27290,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 99,
+                            lineNumber: 100,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27309,24 +27311,24 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 120,
+                            lineNumber: 121,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 49,
+                    lineNumber: 50,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 48,
+                lineNumber: 49,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 46,
+        lineNumber: 47,
         columnNumber: 5
     }, undefined);
 };
@@ -27340,7 +27342,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../game-card/game-card":"3p24S","../game-view/game-view":"foMLl","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","../navigation-bar/navigation-bar":"bsPVM","../profile-view/profile-view":"2vVqf","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3p24S":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../game-card/game-card":"3p24S","../game-view/game-view":"foMLl","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","../navigation-bar/navigation-bar":"bsPVM","../profile-view/profile-view":"2vVqf","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../cart-view/cart-view":"2K73C"}],"3p24S":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7cf9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27403,12 +27405,12 @@ const GameCard = ({ game, user, token, setUser })=>{
                     src: game.image
                 }, void 0, false, {
                     fileName: "src/components/game-card/game-card.jsx",
-                    lineNumber: 72,
+                    lineNumber: 69,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/game-card/game-card.jsx",
-                lineNumber: 71,
+                lineNumber: 68,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
@@ -27422,13 +27424,21 @@ const GameCard = ({ game, user, token, setUser })=>{
                             children: game.title
                         }, void 0, false, {
                             fileName: "src/components/game-card/game-card.jsx",
-                            lineNumber: 78,
+                            lineNumber: 75,
                             columnNumber: 9
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/game-card/game-card.jsx",
-                        lineNumber: 77,
+                        lineNumber: 74,
                         columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
+                        className: "card-price",
+                        children: game.price
+                    }, void 0, false, {
+                        fileName: "src/components/game-card/game-card.jsx",
+                        lineNumber: 77,
+                        columnNumber: 9
                     }, undefined),
                     user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         onClick: inCart ? handleRemoveFromCart : handleAddToCart,
@@ -27436,30 +27446,30 @@ const GameCard = ({ game, user, token, setUser })=>{
                             children: "Remove from cart"
                         }, void 0, false, {
                             fileName: "src/components/game-card/game-card.jsx",
-                            lineNumber: 82,
+                            lineNumber: 80,
                             columnNumber: 23
                         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: "Add to cart"
                         }, void 0, false, {
                             fileName: "src/components/game-card/game-card.jsx",
-                            lineNumber: 82,
+                            lineNumber: 80,
                             columnNumber: 55
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/game-card/game-card.jsx",
-                        lineNumber: 81,
+                        lineNumber: 79,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/game-card/game-card.jsx",
-                lineNumber: 76,
+                lineNumber: 73,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/game-card/game-card.jsx",
-        lineNumber: 69,
+        lineNumber: 66,
         columnNumber: 7
     }, undefined);
 };
@@ -46905,7 +46915,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouter = require("react-router");
 var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
-const GameView = ({ games })=>{
+const GameView = ({ games, user, token, setUser })=>{
     _s();
     const { gameId } = (0, _reactRouter.useParams)();
     const game = games.find((g)=>g.id === gameId);
@@ -46913,9 +46923,25 @@ const GameView = ({ games })=>{
         children: "Game not found."
     }, void 0, false, {
         fileName: "src/components/game-view/game-view.jsx",
-        lineNumber: 15,
+        lineNumber: 12,
         columnNumber: 12
     }, undefined);
+    // Add to cart:
+    const handleAddToCart = ()=>{
+        if (user && !user.Cart.includes(game.id)) fetch(`https://cozy-shopper-24251c3233dc.herokuapp.com/users/${user.Username}/games/${game.id}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            if (response.ok) return response.json();
+        }).then((data)=>{
+            setUser(data);
+        }).catch((error)=>{
+            console.log("Error adding game to cart:", error);
+        });
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -46924,12 +46950,12 @@ const GameView = ({ games })=>{
                     alt: game.title
                 }, void 0, false, {
                     fileName: "src/components/game-view/game-view.jsx",
-                    lineNumber: 21,
+                    lineNumber: 45,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/game-view/game-view.jsx",
-                lineNumber: 20,
+                lineNumber: 44,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -46937,12 +46963,12 @@ const GameView = ({ games })=>{
                     children: game.title
                 }, void 0, false, {
                     fileName: "src/components/game-view/game-view.jsx",
-                    lineNumber: 24,
+                    lineNumber: 48,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/game-view/game-view.jsx",
-                lineNumber: 23,
+                lineNumber: 47,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -46950,12 +46976,12 @@ const GameView = ({ games })=>{
                     children: game.description
                 }, void 0, false, {
                     fileName: "src/components/game-view/game-view.jsx",
-                    lineNumber: 27,
+                    lineNumber: 51,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/game-view/game-view.jsx",
-                lineNumber: 26,
+                lineNumber: 50,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -46964,20 +46990,28 @@ const GameView = ({ games })=>{
                         children: "Price: "
                     }, void 0, false, {
                         fileName: "src/components/game-view/game-view.jsx",
-                        lineNumber: 30,
+                        lineNumber: 54,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: game.price
                     }, void 0, false, {
                         fileName: "src/components/game-view/game-view.jsx",
-                        lineNumber: 31,
+                        lineNumber: 55,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/game-view/game-view.jsx",
-                lineNumber: 29,
+                lineNumber: 53,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: handleAddToCart,
+                children: "Add to cart"
+            }, void 0, false, {
+                fileName: "src/components/game-view/game-view.jsx",
+                lineNumber: 57,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -46987,18 +47021,18 @@ const GameView = ({ games })=>{
                     children: "Back"
                 }, void 0, false, {
                     fileName: "src/components/game-view/game-view.jsx",
-                    lineNumber: 34,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/game-view/game-view.jsx",
-                lineNumber: 33,
+                lineNumber: 59,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/game-view/game-view.jsx",
-        lineNumber: 19,
+        lineNumber: 43,
         columnNumber: 7
     }, undefined);
 };
@@ -47016,7 +47050,7 @@ $RefreshReg$(_c, "GameView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router":"dbWyW","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9YtA0":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router":"dbWyW"}],"9YtA0":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47353,6 +47387,15 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
                                         lineNumber: 19,
                                         columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                        as: (0, _reactRouterDom.Link),
+                                        to: "/cart",
+                                        children: "Cart"
+                                    }, void 0, false, {
+                                        fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                        lineNumber: 22,
+                                        columnNumber: 17
                                     }, undefined)
                                 ]
                             }, void 0, true),
@@ -47363,7 +47406,7 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         children: "Logout"
                                     }, void 0, false, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 26,
+                                        lineNumber: 27,
                                         columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
@@ -47372,7 +47415,16 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         children: "Profile"
                                     }, void 0, false, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 27,
+                                        lineNumber: 28,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                        as: (0, _reactRouterDom.Link),
+                                        to: "/cart",
+                                        children: "Cart"
+                                    }, void 0, false, {
+                                        fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                        lineNumber: 29,
                                         columnNumber: 17
                                     }, undefined)
                                 ]
@@ -47660,6 +47712,8 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../game-card/game-card":"3p24S","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","react-bootstrap/Col":"2L2I6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lJZlQ":[function() {},{}]},["4s3Ar","1xC6H","d8Dch"], "d8Dch", "parcelRequire22d6")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../game-card/game-card":"3p24S","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","react-bootstrap/Col":"2L2I6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2K73C":[function(require,module,exports) {
+
+},{}],"lJZlQ":[function() {},{}]},["4s3Ar","1xC6H","d8Dch"], "d8Dch", "parcelRequire22d6")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
