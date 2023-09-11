@@ -3,8 +3,11 @@ import { GameCard } from "../game-card/game-card";
 import { GameView } from "../game-view/game-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
+import { NavigationBar } from "../navigation-bar/navigation-bar";
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 
 
 export const MainView = () => {
@@ -33,45 +36,84 @@ export const MainView = () => {
       });
   }, []);
 
-  const handleLogout = () => {
+  const onLogout = () => {
     setUser(null);
     setToken(null);
     localStorage.clear();
   };
 
   return (
-    <Row className="justify-content-md-center">
-      {!user ? (
-        <>
-          <LoginView
-            onLoggedIn={(user, token) => {
-              setUser(user);
-              setToken(token);
-            }}
-          />
-          
-          <SignupView />
-        </>
-      ) : (
-        <button onClick={handleLogout}>Logout</button>
-      )}
+    <BrowserRouter>
+          <NavigationBar className="nav-bar" user={user} onLoggedOut={onLogout} />
+      <Row className="main-view justify-content-md-center">
+        <Routes>
 
-      {selectedGame ? (
-        <Col md={8}>
-        <GameView game={selectedGame} onBackClick={() => setSelectedGame(null)} />
-        </Col>
-      ) : (
-        games.map((game) => (
-          <Col key={game.id} className="mb-5" md={4}>
-          <GameCard
-            game={game}
-            onGameClick={() => {
-              setSelectedGame(game);
-            }}
+          <Route
+            path="/"
+            element={
+              <>
+                {games.map((game) => (
+                  <Col
+                    className="mb-5 "
+                    key={game.id}
+                  >
+                    <GameCard game={game} />
+                  </Col>
+                ))}
+              </>
+            }
           />
-          </Col>
-        ))
-      )}
-    </Row>
+
+
+          <Route
+            path="/games/:gameId"
+            element={
+              <GameView games={games} />
+            }
+          />
+
+
+            <Route
+              path="/signup"
+              element={
+                <>
+                  {user ? (
+                    <Navigate to="/" />
+                  ) : (
+                    <Col md={4}>
+                      <SignupView />
+                    </Col>
+                  )}
+                </>
+
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <>
+                  {user ? (
+                    <Navigate to="/" />
+                  ) : (
+                    <Col md={5}>
+                      <LoginView
+                        onLoggedIn={(user, token) => {
+                          setUser(user);
+                          setToken(token);
+                        }}
+                      />
+                    </Col>
+                  )}
+                </>
+
+              }
+            />
+
+
+
+
+        </Routes>
+      </Row>
+    </BrowserRouter>
   );
 };

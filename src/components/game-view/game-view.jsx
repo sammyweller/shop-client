@@ -1,4 +1,20 @@
-export const GameView = ({ game, onBackClick }) => {
+import React from "react";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+
+export const GameView = ({ games }) => {
+  const { gameId } = useParams();
+
+
+
+  const game = games.find((g) => g.id === gameId);
+
+
+
+  if (!game) {
+    return <div>Game not found.</div>;
+  }
+
     return (
       <div>
         <div>
@@ -14,7 +30,9 @@ export const GameView = ({ game, onBackClick }) => {
           <span>Price: </span>
           <span>{game.price}</span>
         </div>
-        <button onClick={onBackClick}>Back</button>
+        <Link to={`/`}>
+        <button className="back-button">Back</button>
+      </Link>
       </div>
     );
   };
